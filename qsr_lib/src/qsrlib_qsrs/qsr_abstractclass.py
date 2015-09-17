@@ -6,15 +6,16 @@ from abc import ABCMeta, abstractmethod, abstractproperty
 class QSR_Abstractclass(object):
     """Root abstract class of the QSR implementators.
 
-    Abstract properties:
-        * `_unique_id` (*str*): Unique identifier of a QSR.
+    Abstract properties
+        * **_unique_id** (*str*): Unique identifier of a QSR.
         * **_all_possible_relations** (*tuple*): All possible relations of a QSR.
-        * **`_dtype`** (str): Kind of data the QSR operates with, see self._dtype_map for possible values.
+        * **_dtype** (*str*): Kind of data the QSR operates with, see self._dtype_map for possible values.
 
-    Members:
-        * _dtype_map (dict): Mapping of _dtype to methods. It is equal to:
+    Members
+        * **_dtype_map** (*dict*): Mapping of _dtype to methods. It is equal to:
         ```python
         {"points": self._return_points,
+        "bounding_boxes": self._return_bounding_boxes_2d,
         "bounding_boxes_2d": self._return_bounding_boxes_2d}
         ```
 
@@ -50,9 +51,9 @@ class QSR_Abstractclass(object):
     def make_world_qsr_trace(self, world_trace, timestamps, qsr_params, req_params, **kwargs):
         """The main function that generates the world QSR trace.
 
-        QSR classes inheriting from the general purpose meta-abstract classes (e.g.  `QSR_Monadic_Abstractclass`,
+        * QSR classes inheriting from the general purpose meta-abstract classes (e.g.  `QSR_Monadic_Abstractclass`,
         `QSR_Dyadic_Abstractclass`, etc.) need to provide this function.
-        When inheriting from one of the special case meta-abstract classes (e.g. `QSR_Monadic_2t_Abstractclass`,
+        * When inheriting from one of the special case meta-abstract classes (e.g. `QSR_Monadic_2t_Abstractclass`,
         QSR_Dyadic_1t_Abstractclass, etc.) then usually there is no need to do so; check with the documentation of these
         special cases to see if they already implement one.
 
