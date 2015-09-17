@@ -6,7 +6,20 @@ from abc import ABCMeta, abstractmethod, abstractproperty
 class QSR_Abstractclass(object):
     """Root abstract class of the QSR implementators.
 
+    Abstract properties:
+        * `_unique_id` (*str*): Unique identifier of a QSR.
+        * **_all_possible_relations** (*tuple*): All possible relations of a QSR.
+        * **`_dtype`** (str): Kind of data the QSR operates with, see self._dtype_map for possible values.
+
+    Members:
+        * _dtype_map (dict): Mapping of _dtype to methods. It is equal to:
+        ```python
+        {"points": self._return_points,
+        "bounding_boxes_2d": self._return_bounding_boxes_2d}
+        ```
+
     """
+
     __metaclass__ = ABCMeta
 
     _common_dynamic_args = ["qsrs_for"]
@@ -20,7 +33,7 @@ class QSR_Abstractclass(object):
 
     @abstractproperty
     def _unique_id(self):
-        """str: The unique identifier of each QSR."""
+        """str: Unique identifier of a QSR."""
         pass
 
     @abstractproperty
@@ -30,7 +43,7 @@ class QSR_Abstractclass(object):
 
     @abstractproperty
     def _dtype(self):
-        """str: On what kind of data the QSR operates with, see self._dtype_map for possible values"""
+        """str: Kind of data the QSR operates with, see self._dtype_map for possible values"""
         pass
 
     @abstractmethod
