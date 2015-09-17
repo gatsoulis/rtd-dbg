@@ -51,10 +51,13 @@ class QSR_Abstractclass(object):
     def make_world_qsr_trace(self, world_trace, timestamps, qsr_params, req_params, **kwargs):
         """The main function that generates the world QSR trace.
 
-        * QSR classes inheriting from the general purpose meta-abstract classes (e.g.  `QSR_Monadic_Abstractclass`,
-        `QSR_Dyadic_Abstractclass`, etc.) need to provide this function.
-        * When inheriting from one of the special case meta-abstract classes (e.g. `QSR_Monadic_2t_Abstractclass`,
-        QSR_Dyadic_1t_Abstractclass, etc.) then usually there is no need to do so; check with the documentation of these
+        * QSR classes inheriting from the general purpose meta-abstract classes (e.g.  `QSR_Monadic_Abstractclass`_,
+        [QSR_Dyadic_Abstractclass](qsrlib_qsrs.qsr_dyadic_abstractclass.QSR_Dyadic_Abstractclass), etc.)
+        need to provide this function.
+        * When inheriting from one of the special case meta-abstract classes (e.g.
+        QSR_Monadic_2t_Abstractclass <qsrlib_qsrs.qsr_monadic_abstractclass.QSR_Monadic_2t_Abstractclass>,
+        QSR_Dyadic_1t_Abstractclass qsrlib_qsrs.qsr_dyadic_abstractclass.QSR_Dyadic_1t_Abstractclass,
+        etc.) then usually there is no need to do so; check with the documentation of these
         special cases to see if they already implement one.
 
         :param world_trace: The input data.
