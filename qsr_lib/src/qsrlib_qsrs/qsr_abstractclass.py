@@ -14,8 +14,8 @@ class QSR_Abstractclass(object):
     Members
         * **_dtype_map** (*dict*): Mapping of _dtype to methods. It is equal to:
         ```python
-        {"points": self._return_points,
-        "bounding_boxes": self._return_bounding_boxes_2d,
+        {"points": self._return_points,\
+        "bounding_boxes": self._return_bounding_boxes_2d,\
         "bounding_boxes_2d": self._return_bounding_boxes_2d}
         ```
 
